@@ -1,0 +1,637 @@
+/* -----------------------------------start variables----------------------------------- */
+:root {
+    --main-color: #F67C92;
+    --p-color: #777;
+    --main-padding: 60px;
+}
+
+/* -----------------------------------end variables------------------------------------- */
+/* ===================================start global style================================== */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,200;0,300;0,400;0,500;0,800;1,700&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+}
+
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/* small screen */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* medium screen */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+
+/* large screen */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* ===================================end global style==================================== */
+
+/* +++++++++++++++++++++++++++++++++++start component+++++++++++++++++++++++++++++++++++ */
+.special-heading {
+    padding-bottom: 25px;
+    font-weight: bold;
+    font-size: 2rem;
+    position: relative;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+
+.special-heading::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background-color: var(--main-color, #F67C92);
+}
+
+.special-heading+p {
+    color: var(--p-color);
+    line-height: 1.4;
+    font-size: 0.9rem;
+}
+
+span.square-component {
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: var(--main-color, #F67C92);
+    position: relative;
+}
+
+span.square-component::before {
+    content: "";
+    position: absolute;
+    top: 25px;
+    width: 80px;
+    height: 1px;
+    background-color: var(--main-color, #F67C92);
+}
+
+span.square-component::after {
+    content: "";
+    position: absolute;
+    top: 35px;
+    width: 60px;
+    height: 1px;
+    background-color: var(--main-color, #F67C92);
+}
+
+a.common-btn {
+    display: block;
+    padding: 15px 25px;
+    width: fit-content;
+    border: 2px solid var(--main-color, #F67C92);
+    color: #000;
+    text-transform: capitalize;
+    font-weight: 400;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear;
+    cursor: pointer;
+}
+
+a.common-btn:hover {
+    background-color: var(--main-color, #F67C92);
+    color: white;
+}
+
+/* +++++++++++++++++++++++++++++++++++end component+++++++++++++++++++++++++++++++++++++ */
+/* -----------------------------------start header---------------------------------------- */
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+header {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+header .logo {
+    width: 90px;
+}
+
+header .logo img {
+    width: 100%;
+}
+
+.main-nav img {
+    width: 45px;
+    display: block;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear;
+    cursor: pointer;
+}
+
+.main-nav ul {
+    background-color: var(--main-color, #F67C92);
+    width: 200px;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: none;
+    padding-top: 20px;
+}
+
+.main-nav ul a {
+    text-decoration: none;
+    display: block;
+    text-transform: uppercase;
+    padding: 20px;
+    color: white;
+}
+
+.main-nav ul a:hover {
+    text-decoration: underline;
+}
+
+.main-nav img:hover+ul {
+    display: block;
+}
+
+/* =======================================end header==================================== */
+/* ---------------------------------------start landing--------------------------------- */
+.landing {
+    background-image: url('../images/background.png');
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width: 768px) {
+    .landing {
+        background-image: none;
+    }
+}
+
+.landing .container {
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 100px;
+}
+
+.landing .intro h1 {
+    text-transform: lowercase;
+}
+
+.landing .intro h1::first-letter {
+    text-transform: capitalize;
+}
+
+.landing .intro p {
+    max-width: 330px;
+    margin-bottom: 20px;
+}
+
+.landing .social-media {
+    position: fixed;
+    left: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.landing .social-media img {
+    display: block;
+    color: black;
+    width: 15px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+/* ---------------------------------------end landing----------------------------------- */
+/* =======================================start about=================================== */
+
+.about .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .about {
+        padding-top: var(--main-padding);
+    }
+
+    .about .container {
+        flex-direction: column;
+    }
+}
+
+.about .container img {
+    width: 300px;
+    flex-basis: 45%;
+}
+
+@media (max-width: 768px) {
+    .about .container img {
+        max-width: 500px;
+    }
+}
+
+.about .container .about-text {
+    text-align: right;
+    flex-basis: 50%;
+}
+
+.about .container .about-text h1 {
+    text-transform: capitalize;
+}
+
+.about .container .about-text span.square-component {
+    display: flex;
+    margin-left: auto;
+}
+
+.about .container .about-text span.square-component::before,
+.about .container .about-text span.square-component::after {
+    right: 0;
+}
+
+.about .container .about-text p:nth-of-type(2) {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.about .container .about-text .special-heading::before {
+    right: 0px;
+    left: unset;
+}
+
+.about .container .about-text span:nth-of-type(2) {
+    color: var(--p-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: block;
+}
+
+/* =======================================end about=================================== */
+/* =======================================start features============================== */
+.features {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+
+.features .container .features-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+
+.features .container .features-content .feature-box img {
+    width: 80px;
+}
+
+.features .container .features-content .feature-box h3 {
+    font-size: 1.3rem;
+    font-weight: normal;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+
+.features .container .features-content .feature-box p {
+    color: var(--p-color);
+}
+
+.features .container .feature-btn {
+    width: fit-content;
+    display: flex;
+    justify-content: space-between;
+    margin: 40px auto 0px auto;
+}
+
+@media (max-width: 768px) {
+    .features .container .feature-btn {
+        flex-direction: column-reverse;
+    }
+}
+
+.features .container .feature-btn span.square-component {
+    margin-right: 20px;
+}
+
+.features .container .feature-btn span.square-component::before,
+.features .container .feature-btn span.square-component::after {
+    right: 0;
+}
+
+@media (max-width: 768px) {
+    .features .container .feature-btn span.square-component {
+        margin-top: 20px;
+    }
+
+    .features .container .feature-btn span.square-component::before,
+    .features .container .feature-btn span.square-component::after {
+        left: 0;
+    }
+}
+
+/* ==================================end fearures======================================== */
+/* ----------------------------------start courses--------------------------------------- */
+.courses {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+
+.courses .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .courses .container {
+        flex-direction: column-reverse;
+    }
+}
+
+.courses .container .courses-text {
+    flex-basis: 50%;
+}
+
+.courses .container .courses-text a.common-btn {
+    margin: 20px 0px;
+}
+
+.courses .container img {
+    flex-basis: 45%;
+    width: 140px;
+}
+
+@media (max-width: 768px) {
+    .courses .container img {
+        width: 260px;
+    }
+}
+
+/* ----------------------------------end courses----------------------------------------- */
+/* ==================================start offers======================================== */
+.offers {
+    padding-bottom: var(--main-padding);
+}
+
+.offers .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .offers {
+        padding-top: var(--main-padding);
+    }
+
+    .offers .container {
+        flex-direction: column;
+    }
+}
+
+.offers .container img {
+    width: 300px;
+    flex-basis: 45%;
+}
+
+@media (max-width: 768px) {
+    .offers .container img {
+        max-width: 500px;
+    }
+}
+
+.offers .container .offers-text {
+    text-align: right;
+    flex-basis: 50%;
+}
+
+.offers .container .offers-text h1 {
+    text-transform: capitalize;
+}
+
+.offers .container .offers-text span.square-component {
+    display: flex;
+    margin-left: auto;
+}
+
+.offers .offers-text a.common-btn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    margin-left: auto;
+}
+
+.offers .container .offers-text span.square-component::before,
+.offers .container .offers-text span.square-component::after {
+    right: 0;
+}
+
+.offers .container .offers-text .special-heading::before {
+    right: 0px;
+    left: unset;
+}
+
+/* ====================================end offers======================================== */
+/* ------------------------------------start sign up------------------------------------- */
+.sign-up {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+
+.sign-up .container {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .sign-up .container {
+        padding-top: var(--main-padding);
+    }
+
+    .sign-up .container {
+        flex-direction: column-reverse;
+    }
+}
+
+.sign-up .container .sign-up-content {
+    flex-basis: 50%;
+}
+
+@media (max-width: 768px) {
+    .sign-up .container .sign-up-content {
+        margin-top: 20px;
+    }
+}
+
+.sign-up .container .sign-up-content form input {
+    display: block;
+    padding: 10px;
+    width: 100%;
+    outline: none;
+    border: 2px solid #FAB3CF;
+    margin-bottom: 5px;
+    font-size: 0.8rem;
+}
+
+.sign-up .container .sign-up-content .sign-up-btns {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    .sign-up .container .sign-up-content .sign-up-btns {
+        flex-direction: column-reverse;
+    }
+}
+
+.sign-up .container .sign-up-content .sign-up-btns a.common-btn {
+    flex-basis: 48%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+    .sign-up .container .sign-up-content .sign-up-btns a.common-btn {
+        width: 174.64px;
+    }
+
+    .sign-up .container .sign-up-content .sign-up-btns a.common-btn:last-of-type {
+        margin-bottom: 10px;
+    }
+}
+
+.sign-up .container img {
+    width: 260px;
+    flex-basis: 45%;
+}
+
+/* ------------------------------------end sign up--------------------------------------- */
+/* ====================================start footer====================================== */
+footer .container {
+    padding-bottom: var(--main-padding);
+}
+
+footer .container hr {
+    height: 1px;
+    background-color: var(--main-color);
+    border: none;
+    margin-bottom: var(--main-padding);
+}
+
+footer .container .footer-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    footer .container .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+footer .container .footer-content .footer-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 0px 10px;
+    flex-basis: 50%;
+}
+
+footer .container .footer-content .footer-links h4 {
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    color: #FAB3CF;
+}
+
+footer .container .footer-content .footer-links p {
+    color: var(--p-color);
+    font-size: 0.87rem;
+}
+
+@media (max-width: 768px) {
+    footer .container .footer-content .footer-links {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+footer .container .footer-content .footer-copy {
+    flex-basis: 40%;
+}
+
+@media (max-width: 768px) {
+    footer .container .footer-content .footer-copy {
+        padding-top: var(--main-padding);
+    }
+}
+
+footer .container .footer-content .footer-copy li {
+    font-size: 0.87rem;
+}
+
+footer .container .footer-content .footer-copy {
+    margin-top: -40px;
+}
+
+footer .container .footer-content .footer-copy img {
+    width: 80px;
+}
+
+footer .container .footer-content .footer-copy a.common-btn {
+    margin: 10px 0px;
+    padding: 10px 30px;
+    font-size: 0.75rem;
+}
+@media (max-width: 768px) {
+    footer .container .footer-content .footer-copy a.common-btn{
+        margin: 10px auto;
+    }
+}
+/* ==================================end footer========================================== */
